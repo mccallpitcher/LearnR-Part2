@@ -1,0 +1,62 @@
+---
+title: "Learn R Part II In-class Exercises"
+format: html
+editor: visual
+---
+
+Welcome to Quarto! This is where you will try out all of the hands-on exercises in the workshop. Begin by running these first two code chunks:
+
+```{r}
+# load packages
+library(tidyverse)
+```
+
+```{r}
+# load data
+tswift <- read_csv("data/taylor_swift_spotify.csv")
+nat_parks <- read_csv("data/nat_parks_visitors.csv")
+```
+
+## 00. Quick review
+
+Using an `if_else()` statement, create a new variable in `tswift` that indicates if a song is "long" or "short". Name the variable `long_short`.
+
+Songs are considered "long" if `duration_ms` is greater than 250000.
+
+```{r}
+
+```
+
+## 01. How do I aggregate by collapsing?
+
+Using `group_by()` and `summarise()`, calculate average `danceability` by `long_short`.
+
+On average, are Taylor Swift's longer or shorter songs more "danceable"?
+
+```{r}
+
+```
+
+## 02. How do I aggregate *without* collapsing?
+
+Alter the `tswift` data frame to add a variable that calculates average acousticness by album (without collapsing).
+
+Bonus: Can you determine if the song "Cruel Summer" is more or less acoustic than the Lover album average?
+
+```{r}
+
+```
+
+## 03. How do I tidy data?
+
+Pivot the `nat_parks` data frame longer so that year and visitors each make a column.
+
+Hint: Pivot the year columns only. To specify them, you can use either of these structures:
+
+`cols = index1:index2`
+
+`cols = -c(column1, column2`)
+
+```{r}
+
+```

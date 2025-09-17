@@ -1,0 +1,98 @@
+---
+title: "Learn R Part II - Extra Exercises"
+format: html
+editor: visual
+---
+
+To save you time, I've completed tasks 1 and 2 for you. Make sure to run those code chunks before moving on to task 3.
+
+#### 1. Load tidyverse
+
+```{r}
+# load packages
+library(tidyverse)
+```
+
+#### 2. Load two data sets using `read_csv()`
+
+The data sets for these exercises include:
+
+1.  `se_colleges`: admissions information for 4-year colleges and universities in the U.S. southeast in fall 2023 (<https://nces.ed.gov/ipeds/use-the-data>).
+
+2.  `us_pop`: total U.S. population by race/ethnicity and state in 2020 (<https://data.census.gov/table/DECENNIALDHC2020.P9?g=010XX00US>)
+
+```{r}
+# import data
+se_colleges <- read_csv("data/admissions_data.csv")
+us_pop <- read_csv("data/census_race_state.csv")
+```
+
+#### 3. Create new variables
+
+Using `mutate()`, create two new variables in `se_colleges` (make sure to store a new version of `se_colleges` so your variables get saved):
+
+1.  `accept_rate`: `n_admitted` divided by `n_applied`
+
+2.  `selective`: whether colleges are "more selective" or "less selective". "more selective" colleges are those with an `accept_rate` **less than** .5 (Hint: use an `if_else()` statement)
+
+```{r}
+
+```
+
+#### 4. Count observations by group (by collapsing)
+
+How many "more selective" colleges are in the U.S. southeast?
+
+```{r}
+
+```
+
+How many "more selective" HBCUs (Historically Black Colleges and Universities) are in the U.S. southeast? (Hint: group by two variables. An `hbcu` value of 1 indicates a college is an HBCU)
+
+```{r}
+
+```
+
+#### 5. Other calculations by group (by collapsing)
+
+Using `group_by()` and `summarise()`, calculate two aggregations by `control` (remember to use `na.rm = TRUE`):
+
+1.  `total_applied`: Sum of applicants
+
+2.  `avg_accept`: Average (mean) acceptance rate
+
+Which `control` category had the greatest number of applicants? What about the highest average acceptance rate?
+
+```{r}
+
+```
+
+#### 6. Other calculations by group (without collapsing)
+
+How does each individual college's enrollment compares to total enrollment in their states? More specifically, which three colleges enrolled the highest percentage of total enrollment in their state?
+
+Hints:
+
+-   Use `group_by()` and `mutate()`
+
+-   Within `mutate()`, first calculate total state enrollment, then calculate each college's percent of that total enrollment variable
+
+-   Sort by your percentage variable (in descending order) to determine the highest percentage colleges (you may also want to select just a subset of columns to view your results)
+
+```{r}
+
+```
+
+#### 7. Tidying data
+
+Pivot the `us_pop` data frame into a long/tidy format.
+
+```{r}
+
+```
+
+Using your long data frame, determine how many Hispanic or Latino individuals live in the United States (Hint: use `group_by()` and `summarise()`).
+
+```{r}
+
+```
