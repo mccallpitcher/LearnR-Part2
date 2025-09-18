@@ -59,7 +59,7 @@ Using `group_by()` and `summarise()`, calculate two aggregations by `control` (r
 
 1.  `total_applied`: Sum of applicants
 
-2.  `avg_accept`: Average (mean) acceptance rate
+2.  `avg_accept`: Average (mean) of `accept_rate`
 
 Which `control` category had the greatest number of applicants? What about the highest average acceptance rate?
 
@@ -69,13 +69,13 @@ Which `control` category had the greatest number of applicants? What about the h
 
 #### 6. Other calculations by group (without collapsing)
 
-How does each individual college's enrollment compares to total enrollment in their states? More specifically, which three colleges enrolled the highest percentage of total enrollment in their state?
+Which three colleges enrolled the highest percentage of total enrollment in their state?
 
 Hints:
 
 -   Use `group_by()` and `mutate()`
 
--   Within `mutate()`, first calculate total state enrollment, then calculate each college's percent of that total enrollment variable
+-   Within `mutate()`, first calculate total state enrollment (sum of `n_enrolled`), then calculate each college's percent of that total enrollment variable
 
 -   Sort by your percentage variable (in descending order) to determine the highest percentage colleges (you may also want to select just a subset of columns to view your results)
 
@@ -91,7 +91,7 @@ Pivot the `us_pop` data frame into a long/tidy format.
 
 ```
 
-Using your long data frame, determine how many Hispanic or Latino individuals live in the United States (Hint: use `group_by()` and `summarise()`).
+Using your long/tidy data frame, determine how many Hispanic or Latino individuals live in the United States (Hint: use `group_by()` and `summarise()`).
 
 ```{r}
 

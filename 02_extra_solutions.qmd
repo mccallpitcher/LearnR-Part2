@@ -48,7 +48,7 @@ se_colleges <- se_colleges |>
 
 How many "more selective" colleges are in the U.S. southeast?
 
-***64, compared to 340 "less selective" colleges***
+***64 "more selective", compared to 340 "less selective"***
 
 ```{r}
 # count by selective variable:
@@ -82,7 +82,7 @@ Using `group_by()` and `summarise()`, calculate two aggregations by `control` (r
 
 1.  `total_applied`: Sum of applicants
 
-2.  `avg_accept`: Average (mean) acceptance rate
+2.  `avg_accept`: Average (mean) of `accept_rate`
 
 Which `control` category had the greatest number of applicants? What about the highest average acceptance rate?
 
@@ -98,13 +98,13 @@ se_colleges |>
 
 #### 6. Other calculations by group (without collapsing)
 
-How does each individual college's enrollment compares to total enrollment in their states? More specifically, which three colleges enrolled the highest percentage of total enrollment in their state?
+Which three colleges enrolled the highest percentage of total enrollment in their state?
 
 Hints:
 
 -   Use `group_by()` and `mutate()`
 
--   Within `mutate()`, first calculate total state enrollment, then calculate each college's percent of that total enrollment variable
+-   Within `mutate()`, first calculate total state enrollment (sum of `n_enrolled`), then calculate each college's percent of that total enrollment variable
 
 -   Sort by your percentage variable (in descending order) to determine the highest percentage colleges (you may also want to select just a subset of columns to view your results)
 
@@ -132,12 +132,12 @@ us_pop_long <- us_pop |>
                values_to = "population")
 ```
 
-Using your long data frame, determine how many Hispanic or Latino individuals live in the United States (Hint: use `group_by()` and `summarise()`).
+Using your long/tidy data frame, determine how many Hispanic or Latino individuals live in the United States (Hint: use `group_by()` and `summarise()`).
 
 ***62 million***
 
 ```{r}
-# calculate total pop by race/ethnicity
+# calculate total population by race/ethnicity
 us_pop_long |> 
   group_by(race_ethnicity) |> 
   summarise(total_pop = sum(population))

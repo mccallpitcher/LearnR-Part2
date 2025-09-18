@@ -53,7 +53,7 @@ Pivot the `nat_parks` data frame longer so that year and visitors each make a co
 
 Hint: Pivot the year columns only. To specify them, you can use either of these structures:
 
-`cols = index1:index2`
+`cols = start:stop`
 
 `cols = -c(column1, column2`)
 
