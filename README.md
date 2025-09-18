@@ -1,4 +1,4 @@
-**Link to slides:** 
+**Link to slides:** https://mccall-pitcher.quarto.pub/learn-r-slides-2/#/title-slide 
 <br>
 <br>
 **Step 1:** Download materials as a zip file by clicking the green "Code" button, then "Download ZIP"
